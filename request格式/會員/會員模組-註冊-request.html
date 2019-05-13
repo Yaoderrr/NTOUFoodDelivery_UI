@@ -19,11 +19,19 @@
         var JData;
         var sJson = JSON.stringify
             ({
-                restName: "寶妹", restAddress: "基隆市 中正區中正路 808號 一樓"
+                
+                    User_Id: "fdvy8bejr",
+                    password: "iofeks",
+                    User_Name: "ibmelsl",
+                    email: "ifekcv",
+                    Phone_Number: "nyeljb",
+                    address: "56g7fruikf",
+                    User_Type: "deliver"
+                
             });
 
         $.ajax({
-            url: "https://ntou-sfd.herokuapp.com/ShowMenuServlet",
+            url: "https://ntou-sfd.herokuapp.com/SignUpServlet",
             type: "POST",
             async: true,
             dataType: "json",
@@ -33,22 +41,17 @@
 
                 alert("SUCCESS!!!");
                 $.each(JData, function () {
-                    var NumOfJData = JData.result.length;
-                    var stringJData = JSON.stringify(JData);
-                   
-                    $("body").append("<tr>" +stringJData+"</tr>");
-                    for (var i = 0; i < NumOfJData; i++) {
+                    //var stringJData = JSON.stringify(JData);
+
+                    $("body").append("<tr>" + stringJData + "</tr>");
+                    
                         $("body").append("<tr>" +
-                            "<p>" + JData.result[i]["Food_Id"] + " </p>" +
-                            "<td>" + JData.result[i]["Food_Name"] + " </td>" +
-                            "<td>" + JData.result[i]["Rest_Id"] + " </td>" + "<br>" +
-                            "<td>" + JData.result[i]["Cost"] + " </td>" +
-                            "<td>" + JData.result[i]["Description"] + " </td>" +
-                            "<td><img src='data:image/png;base64," + JData.result[i]["Image"] + "'/></td>" +
-                            
+                            "<p>IsRepeat: " + JData.result["IsRepeat"] + " </p><br>" +
+                            "<p>IsEmpty: " + JData.result["IsEmpty"] + " </p>" +
+
                             "<br>" +
                             "</tr>");
-                    }
+                    
                     //JData = JSON.parse(stringJData);
 
 

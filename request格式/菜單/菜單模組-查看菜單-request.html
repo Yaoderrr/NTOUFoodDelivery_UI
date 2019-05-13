@@ -19,7 +19,7 @@
         var JData;
         var sJson = JSON.stringify
             ({
-                restName: "寶妹", restAddress: "基隆市 中正區中正路 808號 一樓"
+                restName: "apple203", restAddress: "中正路111號"
             });
 
         $.ajax({
@@ -44,7 +44,7 @@
                             "<td>" + JData.result[i]["Rest_Id"] + " </td>" + "<br>" +
                             "<td>" + JData.result[i]["Cost"] + " </td>" +
                             "<td>" + JData.result[i]["Description"] + " </td>" +
-                            "<td><img src='data:image/png;base64," + JData.result[i]["Image"] + "'/></td>" +
+                            "<td><img src='data:image/bmp;base64," + JData.result[i]["Image"] + "'/></td>" +
                             
                             "<br>" +
                             "</tr>");

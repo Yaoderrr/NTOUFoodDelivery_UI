@@ -19,11 +19,11 @@
         var JData;
         var sJson = JSON.stringify
             ({
-                restName: "寶妹", restAddress: "基隆市 中正區中正路 808號 一樓"
+                User_id: "a", password: "a"
             });
 
         $.ajax({
-            url: "https://ntou-sfd.herokuapp.com/ShowMenuServlet",
+            url: "https://ntou-sfd.herokuapp.com/LogInServlet",
             type: "POST",
             async: true,
             dataType: "json",
@@ -39,12 +39,7 @@
                     $("body").append("<tr>" +stringJData+"</tr>");
                     for (var i = 0; i < NumOfJData; i++) {
                         $("body").append("<tr>" +
-                            "<p>" + JData.result[i]["Food_Id"] + " </p>" +
-                            "<td>" + JData.result[i]["Food_Name"] + " </td>" +
-                            "<td>" + JData.result[i]["Rest_Id"] + " </td>" + "<br>" +
-                            "<td>" + JData.result[i]["Cost"] + " </td>" +
-                            "<td>" + JData.result[i]["Description"] + " </td>" +
-                            "<td><img src='data:image/png;base64," + JData.result[i]["Image"] + "'/></td>" +
+                            "<p>loginStatus: " + JData.result[i]["loginStatus"] + " </p>" +
                             
                             "<br>" +
                             "</tr>");
